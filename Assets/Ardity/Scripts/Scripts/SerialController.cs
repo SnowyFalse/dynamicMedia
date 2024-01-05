@@ -110,20 +110,30 @@ public class SerialController : MonoBehaviour
         // If the user prefers to poll the messages instead of receiving them
         // via SendMessage, then the message listener should be null.
         if (messageListener == null)
+        {
+            Debug.Log("messageListener == null");
             return;
+        }
 
         // Read the next message from the queue
         string message = (string)serialThread.ReadMessage();
         if (message == null)
+        {
             return;
-
+            
+        }
+            
         // Check if the message is plain data or a connect/disconnect event.
         if (ReferenceEquals(message, SERIAL_DEVICE_CONNECTED))
             messageListener.SendMessage("OnConnectionEvent", true);
         else if (ReferenceEquals(message, SERIAL_DEVICE_DISCONNECTED))
             messageListener.SendMessage("OnConnectionEvent", false);
         else
+        {
+            Debug.Log("messageListener received");
             messageListener.SendMessage("OnMessageArrived", message);
+            
+        }
     }
 
     // ------------------------------------------------------------------------

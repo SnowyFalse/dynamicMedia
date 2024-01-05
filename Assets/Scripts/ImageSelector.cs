@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ImageSelector : MonoBehaviour
 {
     Image m_Image;
+    
     public Sprite fox;
     public Sprite seal;
     // Start is called before the first frame update
