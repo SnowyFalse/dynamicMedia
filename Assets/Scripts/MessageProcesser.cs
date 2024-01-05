@@ -31,6 +31,8 @@ public class MessageProcesser : MonoBehaviour
     
     
     
+    
+    
     // Invoked when a line of data is received from the serial device.
     void OnMessageArrived(string msg)
     {
@@ -64,6 +66,7 @@ public class MessageProcesser : MonoBehaviour
             podest.SetActive(false);
 
         }
+        
         
     }
 

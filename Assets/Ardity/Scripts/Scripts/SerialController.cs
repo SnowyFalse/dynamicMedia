@@ -111,17 +111,13 @@ public class SerialController : MonoBehaviour
         // via SendMessage, then the message listener should be null.
         if (messageListener == null)
         {
-            Debug.Log("messageListener == null");
             return;
         }
 
         // Read the next message from the queue
         string message = (string)serialThread.ReadMessage();
         if (message == null)
-        {
             return;
-            
-        }
             
         // Check if the message is plain data or a connect/disconnect event.
         if (ReferenceEquals(message, SERIAL_DEVICE_CONNECTED))
@@ -130,10 +126,10 @@ public class SerialController : MonoBehaviour
             messageListener.SendMessage("OnConnectionEvent", false);
         else
         {
-            Debug.Log("messageListener received");
-            messageListener.SendMessage("OnMessageArrived", message);
-            
+            Debug.Log("SERIAL CONTROLLER message: " + message);
+            // messageListener.SendMessage("OnMessageArrived", message);
         }
+            
     }
 
     // ------------------------------------------------------------------------

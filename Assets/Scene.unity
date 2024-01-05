@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18275294, g: 0.22582313, b: 0.29173738, a: 1}
+  m_IndirectSpecularColor: {r: 0.18275326, g: 0.22582352, b: 0.29173794, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -342,7 +342,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &513476429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -665,7 +665,7 @@ VideoPlayer:
   - 1
   m_Url: 
   m_EnabledAudioTracks: 01
-  m_DirectAudioMutes: 00
+  m_DirectAudioMutes: 01
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
@@ -882,6 +882,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serialController: {fileID: 986003073}
+  messageListener: {fileID: 1306946876}
 --- !u!114 &970361843 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114184455643659936, guid: efbc8b0e0903ca046bd518dac429dd20, type: 3}
@@ -934,12 +935,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11442534, guid: a65acf0cbf56b80419f74ebf0bc845f4, type: 3}
       propertyPath: portName
-      value: COM3
+      value: COM9
       objectReference: {fileID: 0}
     - target: {fileID: 11442534, guid: a65acf0cbf56b80419f74ebf0bc845f4, type: 3}
       propertyPath: messageListener
       value: 
       objectReference: {fileID: 1306946876}
+    - target: {fileID: 11442534, guid: a65acf0cbf56b80419f74ebf0bc845f4, type: 3}
+      propertyPath: maxUnreadMessages
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a65acf0cbf56b80419f74ebf0bc845f4, type: 3}
 --- !u!114 &986003073 stripped
@@ -1216,8 +1221,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   podest: {fileID: 671820474}
-  areaWolf: {fileID: 697909037}
-  areaEagle: {fileID: 1546357193}
+  areaWolf: {fileID: 1788830886}
+  areaEagle: {fileID: 1788830886}
 --- !u!195 &1409608255 stripped
 NavMeshAgent:
   m_CorrespondingSourceObject: {fileID: 195513692069388980, guid: efbc8b0e0903ca046bd518dac429dd20, type: 3}
@@ -1498,7 +1503,7 @@ VideoPlayer:
   - 1
   m_Url: 
   m_EnabledAudioTracks: 01
-  m_DirectAudioMutes: 00
+  m_DirectAudioMutes: 01
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
@@ -1644,6 +1649,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1118013425436692, guid: efbc8b0e0903ca046bd518dac429dd20, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1167518812211262, guid: efbc8b0e0903ca046bd518dac429dd20, type: 3}
       propertyPath: m_Name
       value: Cube - Ringbuffer Loop
@@ -1842,6 +1851,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efbc8b0e0903ca046bd518dac429dd20, type: 3}
+--- !u!1 &1788830886 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1167518812211262, guid: efbc8b0e0903ca046bd518dac429dd20, type: 3}
+  m_PrefabInstance: {fileID: 1774441514}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1799573167
 GameObject:
   m_ObjectHideFlags: 0

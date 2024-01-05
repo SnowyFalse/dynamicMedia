@@ -15,11 +15,11 @@ using System.Collections;
 public class SampleUserPolling_JustRead : MonoBehaviour
 {
     public SerialController serialController;
-
+    public GameObject messageListener;
     // Initialization
     void Start()
     {
-        serialController = GameObject.Find("SerialController").GetComponent<SerialController>();
+        // serialController = GameObject.Find("SerialController").GetComponent<SerialController>();
 	}
 
     // Executed each frame
@@ -36,6 +36,9 @@ public class SampleUserPolling_JustRead : MonoBehaviour
         else if (ReferenceEquals(message, SerialController.SERIAL_DEVICE_DISCONNECTED))
             Debug.Log("Connection attempt failed or disconnection detected");
         else
+        {
+            messageListener.SendMessage("OnMessageArrived", message);
             Debug.Log("Message arrived: " + message);
+        }
     }
 }
