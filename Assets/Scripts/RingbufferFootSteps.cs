@@ -46,7 +46,7 @@ public class RingbufferFootSteps : MonoBehaviour
             system.Emit(ep, 1);
             lastEmit = transform.position;
         }
-
+        Destroy(gameObject, 5.0f);
     }
 
     public void OnMouseUpAsButton()
