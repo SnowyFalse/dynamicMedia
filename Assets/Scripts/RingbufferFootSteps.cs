@@ -23,7 +23,7 @@ public class RingbufferFootSteps : MonoBehaviour
     {
         Vector3 randomPos = new Vector3(Random.Range(-10f, 10f), 0, 0);
 
-        Debug.Log("Random: "+ randomPos);
+        Debug.Log("Random: "+ randomPos);   
         lastEmit = transform.position;
         GetComponent<MeshRenderer>().material = activeMat;
         agent.SetDestination(randomPos);

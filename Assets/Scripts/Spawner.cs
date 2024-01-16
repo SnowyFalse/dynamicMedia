@@ -14,6 +14,8 @@ public class Spawner : MonoBehaviour
     
     protected void Update()
     {
+        StartCoroutine (SpawnerDestruction());
+
         elapsedSeconds += Time.deltaTime;
         if (elapsedSeconds >= seconds)
         {
@@ -23,5 +25,13 @@ public class Spawner : MonoBehaviour
             
             elapsedSeconds = 0;
         }
+    }
+    
+    IEnumerator SpawnerDestruction(){
+
+        yield return new WaitForSeconds (60);
+        Debug.Log("DESTROYED");
+        gameObject.SetActive(false);
+
     }
 }
