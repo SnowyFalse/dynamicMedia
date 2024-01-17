@@ -48,6 +48,7 @@ public class MessageProcesser : MonoBehaviour
                 //img.sprite = seal;
                 areaWolf.SetActive(true);
                 podest.SetActive(true);
+                StopCoroutine(SpawnerDestruction());
                 StartCoroutine (SpawnerDestruction());
 
         } else if (processedmsg.Equals("0419CD58C048"))
@@ -57,6 +58,7 @@ public class MessageProcesser : MonoBehaviour
             Debug.Log("Eagle scanned");
             areaEagle.SetActive(true);
             podest.SetActive(true);
+            StopCoroutine(SpawnerDestruction());
             StartCoroutine (SpawnerDestruction());
 
         }
