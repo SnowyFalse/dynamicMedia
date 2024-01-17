@@ -43,30 +43,39 @@ public class MessageProcesser : MonoBehaviour
         areaWolf.SetActive(false);
         areaEagle.SetActive(false);
         if (processedmsg.Equals("041A2CE2D101"))
-            {
+        {
                 // Seal
                 //img.sprite = seal;
                 areaWolf.SetActive(true);
                 podest.SetActive(true);
+                StartCoroutine (SpawnerDestruction());
 
-            } else if (processedmsg.Equals("0419CD58C048"))
-            {
-                // Fox
-                //img.sprite = fox;
-                Debug.Log("Eagle scanned");
-                areaEagle.SetActive(true);
-                podest.SetActive(true);
+        } else if (processedmsg.Equals("0419CD58C048"))
+        {
+            // Fox
+            //img.sprite = fox;
+            Debug.Log("Eagle scanned");
+            areaEagle.SetActive(true);
+            podest.SetActive(true);
+            StartCoroutine (SpawnerDestruction());
 
-            }
-            else
-            {
-                //img.sprite = null;
-                areaWolf.SetActive(false);
-                areaEagle.SetActive(false);
-                podest.SetActive(false);
+        }
+        else
+        {
+            //img.sprite = null;
+            areaWolf.SetActive(false);
+            areaEagle.SetActive(false);
+            podest.SetActive(false);
 
-            }
+        }
         
+    }
+    
+    IEnumerator SpawnerDestruction(){
+
+        yield return new WaitForSeconds (60);
+        podest.SetActive(false);
+
     }
     
     // Invoked when a connect/disconnect event occurs. The parameter 'success'
